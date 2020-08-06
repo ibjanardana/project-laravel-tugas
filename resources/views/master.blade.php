@@ -1,0 +1,5 @@
+@include('head')
+@include('navbar')
+@include('sidebar')
+@include('content')
+@include('footer')
