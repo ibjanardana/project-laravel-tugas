@@ -1,4 +1,5 @@
                         @extends('master')
+                        @section('title', 'Dashboard')
                         @section('breadcumb', 'Dashboard')
                         @section('table-index')
                         <table class="table table-bordered">

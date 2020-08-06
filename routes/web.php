@@ -14,6 +14,6 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('data-tables', function () {
+Route::get('/data-tables', function () {
     return view('data-tables');
 });

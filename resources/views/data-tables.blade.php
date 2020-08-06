@@ -1,4 +1,5 @@
 @extends('master')
+@section('title', 'Data Tables')
 @section('breadcumb', 'Data Tables')
 @section('data-tables')
 <div class="card">

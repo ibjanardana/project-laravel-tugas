@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{url('data-tables')}}" class="nav-link">
+                            <a href="{{url('/data-tables')}}" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Data Tables
@@ -337,7 +337,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Dashboard</h1>
+                            <h1 class="m-0 text-dark">@yield('title')</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
