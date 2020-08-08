@@ -14,23 +14,21 @@ class CreateJawabanTable extends Migration
     public function up()
     {
         Schema::create('jawaban', function (Blueprint $table) {
-            $table->bigIncrements('id')->autoIncrement();
-            $table->string('isi');
-            $table->date('tanggal_dibuat');
-            $table->date('tanggal_diperbaharui');
-            $table->integer('pertanyaan_id');
-            $table->integer('profil_id');
+            $table->bigIncrements('id');
+            $table->longText('isi');
+            $table->unsignedBigInteger('pertanyaan_id')->nullable();
+            $table->unsignedBigInteger('profil_id')->nullable();
             $table->timestamps();
 
             //foreign key
             $table->foreign('pertanyaan_id')
                 ->references('id')
-                ->on('jawaban_pertanyaan_idx')
+                ->on('pertanyaan')
                 ->onDelete('restrict');
 
-            $table->foreign('jawaban_profil1_idx')
+            $table->foreign('profil_id')
                 ->references('id')
-                ->on('jawaban_profil1_idx')
+                ->on('profil')
                 ->onDelete('restrict');
         });
     }

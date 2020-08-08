@@ -14,25 +14,15 @@ class CreatePertanyaanTable extends Migration
     public function up()
     {
         Schema::create('pertanyaan', function (Blueprint $table) {
-            $table->bigIncrements('id')->autoIncrement()->unique();
-            $table->string('judul', 45);
-            $table->string('isi');
-            $table->date('tanggal_dibuat');
-            $table->date('tanggal_diperbaharui');
-            $table->unsignedInteger('jawaban_tepat_id');
-            $table->unsignedInteger('profil_id');
+            $table->bigIncrements('id');
+            $table->string('judul');
+            $table->longText('isi');
+
+            $table->bigInteger('jawaban_tepat_id')->unsigned()->nullable();
+            $table->foreign('jawaban_tepat_id')->references('id')->on('jawaban');
+            $table->BigInteger('profil_id')->unsigned()->nullable();
+            $table->foreign('profil_id')->references('id')->on('profil');
             $table->timestamps();
-
-            //foreign key
-            $table->foreign('jawaban_tepat_id')
-                ->references('id')
-                ->on('pertanyaan_jawaban_idx')
-                ->onDelete('restrict');
-
-            $table->foreign('profil_id')
-                ->references('id')
-                ->on('pertanyaan_profil1_idx')
-                ->onDelete('restrict');
         });
     }
 

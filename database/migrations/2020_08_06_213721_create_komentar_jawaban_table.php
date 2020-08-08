@@ -17,17 +17,17 @@ class CreateKomentarJawabanTable extends Migration
             $table->bigIncrements('id')->autoIncrement();
             $table->string('isi');
             $table->date('tanggal_dibuat');
-            $table->unsignedInteger('jawaban_id');
-            $table->unsignedInteger('profil_id');
+            $table->unsignedInteger('jawaban_id')->nullable();
+            $table->unsignedInteger('profil_id')->nullable();
             $table->timestamps();
 
             //foreign key
-            $table->foreign('komentar_jawaban_jawaban1_idx')
+            $table->foreign('jawaban_id')
                 ->references('id')
                 ->on('jawaban')
                 ->onDelete('restrict');
 
-            $table->foreign('komentar_jawaban_profil1_idx')
+            $table->foreign('profil_id')
                 ->references('id')
                 ->on('profil')
                 ->onDelete('restrict');

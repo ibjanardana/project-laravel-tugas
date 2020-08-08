@@ -1,2 +1,6 @@
 @yield('table-index')
 @yield('data-tables')
+@yield('pertanyaan')
+@yield('modal')
+@yield('pertanyaan-details')
+@yield('pertanyaan-ubah')
